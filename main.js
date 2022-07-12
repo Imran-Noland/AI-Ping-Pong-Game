@@ -43,8 +43,15 @@ function modelLoaded(){
   }
   }
 
-function draw(){
+  GameStatus= "";
 
+  function startGame(){
+  GameStatus= "start";
+  document.getElementById("status").innerHTML= "Game Is Loading";
+  }
+
+function draw(){
+if(GameStatus=="start"){
  background(0); 
 image(video, 0, 0, 700, 600);
 fill("red");
@@ -86,7 +93,7 @@ circle(rightwristX, rightwristY, 20);
    //function move call which in very important
     move();
 }
-
+}
 
 
 //function reset when ball does notcame in the contact of padde
